@@ -1,6 +1,6 @@
  <?php
  
-
+include ("inc/db.php");
  
  include 'inc/top-menu.php';
  
@@ -38,7 +38,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">DataTable with default features</h3> <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i><a href="add_user.php" style="color:white;"> Add User</a></button>
+        <h3 class="card-title">List of Users</h3> <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i><a href="add_user.php" style="color:white;"> Add User</a></button>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -55,49 +55,32 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Internet
-                        Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td><input type="checkbox"  name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success"></td>
-                    <td><input type="submit"  class="btn btn-success btn-sm" value="Reset"></td>
-                </tr>
+
+            <?php
+            
+            $q = 'select tblusers.*, tblroles.role as r from tblusers inner join tblroles on tblroles.id = tblusers.role';
+            $r = mysqli_query($dbc, $q);
+            if (mysqli_num_rows($r) >= 1) 
+            {
+             while( $row = mysqli_fetch_array($r, MYSQLI_ASSOC))   
+             {
+                echo '<tr>
+                <td>1</td>
+                <td>'.$row['fullname'].'</td>
+                <td>'.$row['email'].'</td>
+                <td>'.$row['r'].'</td>';
+                $role = $row['status']==1 ? "Checked" : "";
+                echo '<td><input type="checkbox"  name="my-checkbox" '. $role.' data-bootstrap-switch data-off-color="danger" data-on-color="success"></td>
+                <td><input type="submit"  class="btn btn-success btn-sm" value="Reset"></td>
+            </tr>';
+             }
+              
+            }
+            
+            ?>
                 
-                <tr>
-                    <td>13</td>
-                    <td>Netscape 7.2</td>
-                    <td>Win 95+ / Mac OS 8.6-9.2</td>
-                    <td>1.7</td>
-                    <td><input type="checkbox"  name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success"></td>
-                    <td><input type="submit"  class="btn btn-success btn-sm" value="Reset"></td>
-                </tr>
-                <tr>
-                    <td>Gecko</td>
-                    <td>Netscape Browser 8</td>
-                    <td>Win 98SE+</td>
-                    <td>1.7</td>
-                    <td><input type="checkbox"  name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success"></td>
-                    <td><input type="submit"  class="btn btn-success btn-sm" value="Reset"></td>
-                </tr>
-                <tr>
-                    <td>Gecko</td>
-                    <td>Netscape Navigator 9</td>
-                    <td>Win 98+ / OSX.2+</td>
-                    <td>1.8</td>
-                    <td>A</td>
-                    <td>A</td>
-                </tr>
-                <tr>
-                    <td>Gecko</td>
-                    <td>Mozilla 1.0</td>
-                    <td>Win 95+ / OSX.1+</td>
-                    <td>1</td>
-                    <td>A</td>
-                    <td>A</td>
-                </tr>
+                
+              
                
             </tbody>
             <tfoot>

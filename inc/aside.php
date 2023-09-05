@@ -105,35 +105,7 @@
              
             </ul>
           </li>
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link active bg-red">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-               Admin
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Coordinator</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Courses</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Management</p>
-                </a>
-              </li>
-            </ul>
-          </li> -->
+       
           <li class="nav-item">
             <a href="#" class="nav-link active bg-brown">
               <i class="nav-icon fas fa-tachometer-alt"></i>

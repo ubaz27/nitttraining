@@ -1,6 +1,7 @@
 <?php
  
-
+ 
+ include ("inc/db.php");
  include 'inc/top-menu.php';
  
  //  <!-- Main Sidebar Container -->
@@ -37,7 +38,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">DataTable with default features</h3> <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i><a href="add_course.php" style="color:white;"> Add Course</a></button>
+        <h3 class="card-title">List of Courses</h3> <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i><a href="add_course.php" style="color:white;"> Add Course</a></button>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -45,68 +46,48 @@
             <thead>
                 <tr>
                     <th>S/N</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Status</th>
-                    <th>Reset Passord</th>
+                    <th>Course Name</th>
+                    <th>Category</th>
+                    <th>Duration(Weeks)</th>
+                    <th>Fees</th>
+                    <th>Inst. %</th>
                    
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Internet
-                        Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td><input type="checkbox"  name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success"></td>
-                    <td><input type="submit"  class="btn btn-success btn-sm" value="Reset"></td>
-                </tr>
-                
-                <tr>
-                    <td>13</td>
-                    <td>Netscape 7.2</td>
-                    <td>Win 95+ / Mac OS 8.6-9.2</td>
-                    <td>1.7</td>
-                    <td><input type="checkbox"  name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success"></td>
-                    <td><input type="submit"  class="btn btn-success btn-sm" value="Reset"></td>
-                </tr>
-                <tr>
-                    <td>Gecko</td>
-                    <td>Netscape Browser 8</td>
-                    <td>Win 98SE+</td>
-                    <td>1.7</td>
-                    <td><input type="checkbox"  name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success"></td>
-                    <td><input type="submit"  class="btn btn-success btn-sm" value="Reset"></td>
-                </tr>
-                <tr>
-                    <td>Gecko</td>
-                    <td>Netscape Navigator 9</td>
-                    <td>Win 98+ / OSX.2+</td>
-                    <td>1.8</td>
-                    <td>A</td>
-                    <td>A</td>
-                </tr>
-                <tr>
-                    <td>Gecko</td>
-                    <td>Mozilla 1.0</td>
-                    <td>Win 95+ / OSX.1+</td>
-                    <td>1</td>
-                    <td>A</td>
-                    <td>A</td>
-                </tr>
+            <?php
+            
+            $q = 'SELECT tblcourses.* , tblcategories.category as cat_name FROM `tblcourses` 
+            inner join tblcategories on tblcategories.id = tblcourses.category_id';
+            $r = mysqli_query($dbc, $q);
+            if (mysqli_num_rows($r) >= 1) 
+            {
+             while( $row = mysqli_fetch_array($r, MYSQLI_ASSOC))   
+             {
+                echo '<tr>
+                <td>1</td>
+                <td>'.$row['course'].'</td>
+                <td>'.$row['cat_name'].'</td>
+                <td>'.$row['duration'].'</td>';
+                // $role = $row['status']==1 ? "Checked" : "";
+                echo '<td>'.$row['fee'].'</td>
+                <td>'.$row['institution_percentage'].'</td>
+            </tr>';
+             }
+              
+            }
+            
+            ?>
                
             </tbody>
             <tfoot>
                 <tr>
                     <th>S/N</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Status</th>
-                    <th>Reset Passord</th>
+                    <th>Course Name</th>
+                    <th>Category</th>
+                    <th>Duration(Weeks)</th>
+                    <th>Fee</th>
+                    <th>Inst. %</th>
                 </tr>
             </tfoot>
         </table>
