@@ -52,7 +52,7 @@
               
             </ul>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <?php if ( $page=='director') echo 'menu-open';?>">
             <a href="#" class="nav-link active bg-yellow">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -62,19 +62,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link ">
+                <a href="./users.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Users</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="./courses.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Courses</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="./agencies.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Agencies</p>
                 </a>
@@ -102,12 +102,7 @@
                   <p>Participants</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Management</p>
-                </a>
-              </li>
+             
             </ul>
           </li>
           <!-- <li class="nav-item">
@@ -160,12 +155,7 @@
                   <p>Finances</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Management</p>
-                </a>
-              </li>
+              
             </ul>
           </li>
           
