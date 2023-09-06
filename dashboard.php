@@ -1,8 +1,5 @@
- <?php include 'inc/top-menu.php';?>
- 
-
-  <!-- Main Sidebar Container -->
-  <?php
+ <?php include 'inc/top-menu.php';
+ $page="dashboard";
   include 'inc/aside.php';
   ?>
 

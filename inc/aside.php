@@ -34,7 +34,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               <li class="nav-item menu-open">
+              <li <?php  if ( $page=='dashboard'){ echo 'class="nav-item menu-open "';} else{echo 'class="nav-item"'; }?>>
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -43,7 +43,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-            <li class="nav-item">
+            <li >
                 <a href="./dashboard.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard</p>
@@ -58,11 +58,11 @@
               
             </ul>
           </li>
-          <li class="nav-item <?php if ( $page=='director') echo 'menu-open';?>">
+          <li <?php  if ( $page=='director'){ echo 'class="nav-item menu-open "';} else{echo 'class="nav-item"'; }?> >
             <a href="#" class="nav-link active bg-yellow">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Admin/Director/TA
+                Admin/Director/TA 
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -87,7 +87,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item menu-open">
+          <li <?php  if ( $page=='coordinator'){ echo 'class="nav-item menu-open "';} else{echo 'class="nav-item"'; }?>>
             <a href="#" class="nav-link active bg-green">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -97,13 +97,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link ">
+                <a href="./courses_his.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Enrol Courses</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="./students.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Participants</p>
                 </a>
@@ -112,7 +112,7 @@
             </ul>
           </li>
        
-          <li class="nav-item">
+          <li <?php  if ( $page=='report'){ echo 'class="nav-item menu-open "';} else{echo 'class="nav-item"'; }?>>
             <a href="#" class="nav-link active bg-brown">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -122,13 +122,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./report.php" class="nav-link active">
+                <a href="./report.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Courses</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./report_finances.php" class="nav-link">
+                <a href="./finance.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Finances</p>
                 </a>

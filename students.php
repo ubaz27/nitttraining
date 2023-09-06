@@ -1,7 +1,7 @@
  <?php
  
 include ("inc/db.php");
-$page="director";
+$page="coordinator";
  include 'inc/top-menu.php';
  
  //  <!-- Main Sidebar Container -->
@@ -15,7 +15,7 @@ $page="director";
          <div class="container-fluid">
              <div class="row mb-2">
                  <div class="col-sm-12">
-                     <h1 class="m-0">Users:</h1>
+                     <h1 class="m-0">Students List:</h1>
                      
 
                  </div><!-- /.col -->
@@ -38,7 +38,7 @@ $page="director";
 
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">List of Users</h3> <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i><a href="add_user.php" style="color:white;"> Add User</a></button>
+        <h3 class="card-title">List of Users</h3> <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i><a href="enrol_student.php" style="color:white;"> Enrol Student</a></button>
     </div>
     <!-- /.card-header -->
     <div class="card-body">

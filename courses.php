@@ -1,6 +1,6 @@
 <?php
  
- 
+ $page="director";
  include ("inc/db.php");
  include 'inc/top-menu.php';
  

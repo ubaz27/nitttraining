@@ -1,7 +1,7 @@
  <?php
  
 include ("inc/db.php");
-$page="director";
+$page="coordinator";
  include 'inc/top-menu.php';
  
  //  <!-- Main Sidebar Container -->
@@ -15,7 +15,7 @@ $page="director";
          <div class="container-fluid">
              <div class="row mb-2">
                  <div class="col-sm-12">
-                     <h1 class="m-0">Users:</h1>
+                     <h1 class="m-0">Courses History:</h1>
                      
 
                  </div><!-- /.col -->
@@ -38,7 +38,7 @@ $page="director";
 
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">List of Users</h3> <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i><a href="add_user.php" style="color:white;"> Add User</a></button>
+        <h3 class="card-title">List of Enrolled Courses</h3> <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i><a href="enrol_course.php" style="color:white;"> Enroll Course</a></button>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -46,11 +46,11 @@ $page="director";
             <thead>
                 <tr>
                     <th>S/N</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
+                    <th>Coord Name</th>
+                    <th>Course</th>
+                    <th>Venue</th>
+                    <th>Fee</th>
                     <th>Status</th>
-                    <th>Reset Passord</th>
                    
                 </tr>
             </thead>
@@ -58,7 +58,11 @@ $page="director";
 
             <?php
             
-            $q = 'select tblusers.*, tblroles.role as r from tblusers inner join tblroles on tblroles.id = tblusers.role';
+            $q = 'SELECT tblcourse_enrolment.*, tblvenue.venue_name, tblusers.fullname, tblcourses.course FROM 
+            `tblcourse_enrolment` 
+            inner join tblusers on tblusers.id = tblcourse_enrolment.coordinator_id 
+            inner join tblvenue on tblvenue.id = tblcourse_enrolment.venue_id 
+            inner join tblcourses on tblcourses.course_id = tblcourse_enrolment.course_id';
             $r = mysqli_query($dbc, $q);
             if (mysqli_num_rows($r) >= 1) 
             {
@@ -69,11 +73,12 @@ $page="director";
                 echo '<tr>
                 <td>'.$sn.'</td>
                 <td>'.$row['fullname'].'</td>
-                <td>'.$row['email'].'</td>
-                <td>'.$row['r'].'</td>';
-                $role = $row['status']==1 ? "Checked" : "";
-                echo '<td><input type="checkbox"  name="my-checkbox" '. $role.' data-bootstrap-switch data-off-color="danger" data-on-color="success"></td>
-                <td><input type="submit"  class="btn btn-success btn-sm" value="Reset"></td>
+                <td>'.$row['course'].'</td>
+                <td>'.$row['venue_name'].'</td>
+                <td>'.$row['course_fee'].'</td>';
+                $status = $row['status']==1 ? "Approved" : "Not Approved";
+                echo '<td>'.$status.'</td>
+               
             </tr>';
             $sn+=1;
              }
@@ -88,12 +93,12 @@ $page="director";
             </tbody>
             <tfoot>
                 <tr>
-                    <th>S/N</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
+                <th>S/N</th>
+                    <th>Coord Name</th>
+                    <th>Course</th>
+                    <th>Venue</th>
+                    <th>Fee</th>
                     <th>Status</th>
-                    <th>Reset Passord</th>
                 </tr>
             </tfoot>
         </table>
