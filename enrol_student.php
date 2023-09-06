@@ -1,6 +1,6 @@
 <?php
 include 'inc/db.php';
-$page="coordinator";
+$page = "coordinator";
 include 'inc/top-menu.php';
 
 $page = 'course';
@@ -9,21 +9,19 @@ include 'inc/aside.php';
 
 
 if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
-    $course_name = $_POST['course_name'];
-    $duration = $_POST['duration'];
-    $fees = $_POST['fees'];
-    $status = $_POST['status'];
-    $percentage = $_POST['percentage'];
-    $category   = $_POST['category'];
+    $reg_Num = $_POST['reg_Num'];
+    $name = $_POST['name'];
+    $gender = $_POST['gender'];
+    $p_num = $_POST['p_num'];
+    $course_enrol_id = $_POST['course_enrol_id'];
+    $email = $_POST['email'];
+    $agency = $_POST['agency'];
+    $rank = $_POST['rank'];
 
-    if ($status == 'on') {
-        $status = 1;
-    } else {
-        $status = 0;
-    }
-    if (!empty($course_name) and !empty($fees) and !empty($duration)) {
-        $sql = "INSERT INTO `tblcourses`( `course`, `category`, `duration`, `fee`, `institution_percentage`, 
-        `status`, `trans_by`) VALUES ('$course_name','$category','$duration','$fees','$percentage', '$status','ubaz')";
+   
+    // if (!empty($reg_num) and !empty($gender) and !empty($name)) {
+        $sql = "INSERT INTO `tblstudent`(`reg_number`, `name`, `phone`, `email`, `agency`, `rank`, `gender`, `course_enrol_id`) VALUES 
+        ('$reg_Num','$name','$p_num','$email','$agency','$rank','$gender','$course_enrol_id')";
         $result = mysqli_query($dbc, $sql);
         if (mysqli_affected_rows($dbc) == 1) {
             $message = 'Record Added Successfully';
@@ -33,7 +31,7 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
             $alert = 'alert alert-danger alert-dismissible';
         }
     }
-}
+//}
 
 
 
@@ -63,108 +61,150 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
             <!-- Main row -->
             <div class="row">
                 <div class="col-sm-12">
-                       <!-- message -->
-                <?php
+                    <!-- message -->
+                    <?php
                     //  echo $status;
                     //  echo $course_name;
                     //  echo $duration;
                     //  echo $category;
-                    //  echo $fees;
-                     if (!empty($message)) {
-                         echo '<div style="width:100%; margin-left:0%">
+                    //  echo $gender;
+                    if (!empty($message)) {
+                        echo '<div style="width:100%; margin-left:0%">
                                                                   <div class="' .
-                             $alert .
-                             '">
+                            $alert .
+                            '">
                                                                       <button type="button" class="close" data-dismiss="alert"
                                                                           aria-hidden="true">&times;</button>
                                                                       <h5><i class="icon fas fa-info"></i> Alert!</h5>
                                                                       ' .
-                             $message .
-                             '
+                            $message .
+                            '
                                                                   </div>
                                                               </div>';
-                     }
-                     
-                     ?>
-                        <!-- end of message -->
+                    }
+
+                    ?>
+                    <!-- end of message -->
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Add User Form</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form method="POST" action="add_course.php" name="add_course">
+                        <form method="POST" action="enrol_student.php" name="enrol_student">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="exampleInputFullName">Course Name</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                                placeholder="Enter Course Name" name= 'course_name'>
+                                            <label for="RegistrationNumber">Registration Number</label>
+                                            <input type="text" class="form-control" id="reg_Num"
+                                                placeholder="Enter Course Name" name='reg_Num'>
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Fees</label>
-                                            <input type="number" class="form-control" id="exampleInputEmail1"
-                                                placeholder="Enter Fees" name='fees' >
+                                            <label for="name">Student Name</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Enter Name"
+                                                name='name'>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
+
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Duration (Weeks)</label>
+                                            <label for="gender"> Gender </label>
+                                            <select name="gender" id="gender" class="form-control">
+                                                <option value="">Select Gender</option>
+                                                <option value="M">Male</option>
+                                                <option value="F">Female</option>
+                                            </select>
 
-                                            <select id="" class="form-control" name = 'duration'>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="p_num">Phone Number</label>
+                                            <input type="text" class="form-control" id="p_num" placeholder="Enter Name"
+                                                name='p_num'>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="email">Email Address</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Enter Name"
+                                                name='email'>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="Agency">Agency/Organiyation</label>
+
+                                            <select id="" class="form-control" name='agency'>
+                                                <option value="">Select gency/Organiyation </option>
                                                 <?php
-                                                for ($i = 1; $i <= 20; $i++) {
-                                                    echo '<option>' . $i . '</option>';
+                                                $query = 'SELECT `id`, `name` FROM `tblagencies`';
+
+                                                $result = mysqli_query($dbc, $query);
+
+
+                                                while ($row = mysqli_fetch_array($result)) {
+                                                    echo '<option value = "$row[0]">' . $row[1] . '</option>';
                                                 }
-                                                
                                                 ?>
 
 
                                             </select>
                                         </div>
                                     </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1"> Category </label>
-                                            <select name="category" id="" class="form-control" >
-                                                <option value="">Scheduled</option>
-                                                <option value="">Customised</option>
-                                               </select>
-
-                                        </div>
-                                    </div>
                                 </div>
-
                                 <div class="row">
-                                   
 
-                                    
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Institution's Percentate</label>
-                                            <input type="number" class="form-control" id="exampleInputEmail1"
-                                                placeholder="Enter Percentage" name='percentage'>
+                                            <label for="rank">Rank </label>
+                                            <input type="rank" class="form-control" id="rank" placeholder="Enter Rank"
+                                                name='rank'>
                                         </div>
                                     </div>
 
-                                    <div class="col-sm-6">
-                                        <label for="">Status</label><br>
-                                        <input type="checkbox"  checked data-bootstrap-switch
-                                            data-off-color="danger" data-on-color="success" name='status'>
-                                    </div>
-                                    
-                                </div>
 
+
+
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="course_enrol_id">Course Enrolment ID</label>
+                                            <select id="" class="form-control" name='course_enrol_id'>
+                                                <option value="">Select Course Enrolment ID </option>
+                                                <?php
+                                                $query = 'SELECT a.course_id, a.course FROM `tblcourse_enrolment` b JOIN tblcourses a ON a.course_id = b.course_id';
+
+                                                $result = mysqli_query($dbc, $query);
+
+
+                                                while ($row = mysqli_fetch_array($result)) {
+                                                    echo '<option value = '.$row[0].'>' . $row[1] . '</option>';
+                                                }
+                                                ?>
+
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
 
 
                             </div>
+
+
+
+
                             <!-- /.card-body -->
 
                             <div class="card-footer">
