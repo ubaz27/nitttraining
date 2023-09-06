@@ -38,7 +38,7 @@ $page="coordinator";
 
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">List of Enrolled Courses</h3> <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i><a href="enrol_course.php" style="color:white;"> Enroll Course</a></button>
+        <h3 class="card-title">List of Enrolled Courses</h3> <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i><a href="enrol_student.php" style="color:white;"> Enroll Student</a></button>
     </div>
     <!-- /.card-header -->
     <div class="card-body">

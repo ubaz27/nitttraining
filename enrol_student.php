@@ -208,7 +208,7 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Submit</button> &nbsp<a class="btn btn-info" href="courses_his.php">Back</a>
                             </div>
                         </form>
                     </div>
