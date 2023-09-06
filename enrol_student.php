@@ -154,7 +154,7 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
                                                 while ($row = mysqli_fetch_array($result)) {
-                                                    echo '<option value = "$row[0]">' . $row[1] . '</option>';
+                                                    echo '<option value = '.$row[0].'>' . $row[1] . '</option>';
                                                 }
                                                 ?>
 
