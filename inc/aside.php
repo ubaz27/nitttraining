@@ -43,8 +43,14 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="./dashboard.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
               <li class="nav-item">
-                <a href="./index.html" class="nav-link ">
+                <a href="./changepass.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Change Password</p>
                 </a>
@@ -116,13 +122,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
+                <a href="./report.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Courses</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="./report_finances.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Finances</p>
                 </a>

@@ -62,10 +62,11 @@
             $r = mysqli_query($dbc, $q);
             if (mysqli_num_rows($r) >= 1) 
             {
+                $sn = 1;
              while( $row = mysqli_fetch_array($r, MYSQLI_ASSOC))   
              {
                 echo '<tr>
-                <td>1</td>
+                <td>'.$sn.'</td>
                 <td>'.$row['course'].'</td>
                 <td>'.$row['cat_name'].'</td>
                 <td>'.$row['duration'].'</td>';
@@ -73,6 +74,7 @@
                 echo '<td>'.$row['fee'].'</td>
                 <td>'.$row['institution_percentage'].'</td>
             </tr>';
+            $sn+=1;
              }
               
             }

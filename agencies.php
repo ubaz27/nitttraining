@@ -65,26 +65,28 @@
                                      $q = 'SELECT tblagencies.* FROM `tblagencies` ';
                                      $r = mysqli_query($dbc, $q);
                                      if (mysqli_num_rows($r) >= 1) {
+                                         $sn = 1;
                                          while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
                                              echo '<tr>
-                                                     <td>1</td>
-                                                     <td>' .
+                                             <td>'.$sn.'</td>
+                                                                                          <td>' .
                                                  $row['name'] .
                                                  '</td>
-                                                     <td>' .
+                                                                                          <td>' .
                                                  $row['state'] .
                                                  '</td>
-                                                     <td>' .
+                                                                                          <td>' .
                                                  $row['contact_person'] .
                                                  '</td>';
                                              // $role = $row['status']==1 ? "Checked" : "";
                                              echo '<td>' .
                                                  $row['phone'] .
                                                  '</td>
-                                                     <td>' .
+                                                                                          <td>' .
                                                  $row['email'] .
                                                  '</td>
-                                                 </tr>';
+                                                                                      </tr>';
+                                                                                      $sn+=1;
                                          }
                                      }
                                      
