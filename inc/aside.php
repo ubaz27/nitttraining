@@ -59,7 +59,7 @@
             </ul>
           </li>
           <li <?php  if ( $page=='director'){ echo 'class="nav-item menu-open "';} else{echo 'class="nav-item"'; }?> >
-            <a href="#" class="nav-link active bg-yellow">
+            <a href="#" class="nav-link active ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Admin/Director/TA 
@@ -88,7 +88,7 @@
             </ul>
           </li>
           <li <?php  if ( $page=='coordinator'){ echo 'class="nav-item menu-open "';} else{echo 'class="nav-item"'; }?>>
-            <a href="#" class="nav-link active bg-green">
+            <a href="#" class="nav-link active ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                Coordinator
@@ -122,9 +122,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./report.php" class="nav-link ">
+                <a href="./report_course_enrolment.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Courses</p>
+                  <p>Course Enrolment</p>
                 </a>
               </li>
               <li class="nav-item">

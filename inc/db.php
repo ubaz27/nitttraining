@@ -32,4 +32,5 @@ if (!$dbc) {
     mysqli_set_charset($dbc, 'utf8');
 }
 
+// echo "sd";
 ?>
