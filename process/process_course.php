@@ -19,10 +19,10 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
         `status`, `trans_by`) VALUES ('$course_name','$category','$duration','$fees','$percentage', '$status','ubaz')";
         $result = mysqli_query($dbc, $sql);
         if (mysqli_affected_rows($dbc) == 1) {
-            $message = 'Record Added Successfully';
+            $message = 'Record Added Successfully for '. $course_name ;
             $alert = 'alert alert-info alert-dismissible';
         } else {
-            $message = 'Something went wrong, try again'.$category;
+            $message = 'Something went wrong, try again for '. $course_name;
             $alert = 'alert alert-danger alert-dismissible';
         }
     }

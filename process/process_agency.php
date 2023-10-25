@@ -3,12 +3,9 @@ require('../inc/db.php');
 
 if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
     $agency_name = $_POST['agency_name'];
-     $phone = $_POST['phone'];
-     $email = $_POST['email'];
-     $address = $_POST['address'];
+     
      $state = $_POST['state'];
-     $fullname = $_POST['fullname'];
-
+    
      $get_result = mysqli_query($dbc,"select * from tblagencies where name = '$agency_name'");
      if ($get_result->num_rows > 0) {
         $message = 'Record Exist';
@@ -18,9 +15,9 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
      {
 
  
-     if (!empty($agency_name) and !empty($state) and !empty($fullname)) {
-         $sql = "INSERT INTO `tblagencies`(`name`, `state`, `contact_person`, `phone`, `email`, `address`) VALUES
-          ('$agency_name','$state','$fullname','$phone','$email', '$address')";
+     if (!empty($agency_name) and !empty($state) ) {
+         $sql = "INSERT INTO `tblagencies`(`name`, `state`) VALUES
+          ('$agency_name','$state')";
          $result = mysqli_query($dbc, $sql);
          if (mysqli_affected_rows($dbc) == 1) {
              $message = 'Record Added Successfully';

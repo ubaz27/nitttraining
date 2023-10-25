@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 define('LIVE', false);
 
 DEFINE('DB_USER', 'root');

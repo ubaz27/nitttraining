@@ -43,7 +43,8 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1 class="m-0">Enrol Courses</h1>
-
+                    
+                   
                 </div><!-- /.col -->
 
             </div><!-- /.row -->
@@ -58,19 +59,20 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
             <!-- /.row -->
             <!-- Main row -->
             <div class="row">
+            
                 <div class="col-sm-12">
                     <!-- message -->
-                    <div id= "user_note">
-
-</div>
+                    <p id= "user_note">
+                    
+                    </p>
                     <!-- end of message -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Enrol Course Form</h3>
+                            <h3 class="card-title">Enrol Course Forms</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form method="POST" id="enrole_course"  name="enrol_course">
+                        <form method="POST" action="enrol_course.php" id="enrole_course"  name="enrol_course">
                             <input type="number" value="2" hidden name='user_id'>
                             <div class="card-body">
                                 <div class="row">
@@ -173,8 +175,8 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">No Of Participants</label>
-                                            <input type="number" class="form-control" id="no_participants" onchange="getRevenue(1)" 
-                                                placeholder="Enter No Of Participants" name='no_participants'>
+                                            <input type="text" class="form-control" id="no_participants" onchange="getRevenue()" 
+                                                placeholder="Enter No Of Participants" name='no_participants' >
                                         </div>
                                     </div>
 
@@ -188,16 +190,16 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Revenue Generated</label>
-                                            <input type="number" class="form-control" id="exampleInputEmail1"
-                                                placeholder="Enter Fees" name='revenue'>
+                                            <input type="number" class="form-control" id="revenue"
+                                                placeholder="Enter Fees" name='revenue' readonly>
                                         </div>
                                     </div>
 
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Savings for Institution</label>
-                                            <input type="number" class="form-control" id="exampleInputEmail1"
-                                                placeholder="Get Institution Percentage" name='inst_percentage'>
+                                            <input type="number" class="form-control" id="institute_savings"
+                                                placeholder="Get Institution Percentage" name='inst_percentage' readonly>
                                         </div>
                                     </div>
                                   
@@ -246,29 +248,13 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
 <script type="text/javascript">
      $(document).ready(function() {
 
-        // alert("ds");
-    //add category
-    //add category
-$("#category_id").load("getters\\getCategory.php");
-$("#agency_id").load("getters\\getAgencies.php");
-$("#venue_id").load("getters\\getVenues.php");
+
+        $("#category_id").load("getters\\getCategory.php");
+        $("#agency_id").load("getters\\getAgencies.php");
+        $("#venue_id").load("getters\\getVenues.php");
 
 
-// get revenue generated
-// getRevenue(1)
-// {
 
-    
-//     var participants = (document.getElementById("no_participants").value);
-//     var course_fee = (document.getElementByID("course_fee").value);
-//     var revenue_generated = participants * course_fee;
-//     alert(revenue_generated);
-
-    
-// }
-
-    // save to database
-     //users form
         var user_form = $('#enrole_course'); //user's form name = $()
          var user_submit = $('#user_submit');  // user submit button
          var user_note = $('#user_note');
@@ -282,12 +268,14 @@ $("#venue_id").load("getters\\getVenues.php");
                 data: user_form.serialize(), // serialize form data
                 beforeSend: function() {
                     //alert.fadeOut();
+                    // alert("sdd");
                     user_submit.html('Sending....'); // change submit button text
                 },
                 success: function(data) {
                     user_note.html(data).fadeIn(); //fade in response data
                     // user_submit.hide();
                     user_submit.html('Submit');
+                    // alert("sdd");
                 },
                 error: function(e) {
                     console.log(e)
@@ -298,5 +286,23 @@ $("#venue_id").load("getters\\getVenues.php");
      });
 
 
+  function getRevenue()
+	{
+        var course_budget = document.getElementById('course_budget').value;
+		var no_participants = document.getElementById('no_participants').value;
+		var revenue_generated  = 0;
+        var fee= document.getElementById('course_fee').value;
+
+        revenue_generated = no_participants*1*fee;
+        var savings_to_institution = 0;
+        savings_to_institution = revenue_generated*1-course_budget;
+
+        // alert(revenue_generated);
+        document.getElementById('revenue').value = revenue_generated;
+        document.getElementById('institute_savings').value = savings_to_institution;
+
+
+	}
+   
 </script>
 <?php include 'inc/footer.php'; ?>

@@ -55,7 +55,7 @@
                  <div class="col-sm-12">
                  <div id= "user_note">
 
-</div>
+                </div>
                  <!--  -->
                      <div class="card card-primary">
                          <div class="card-header">
@@ -74,37 +74,6 @@
                                          </div>
                                      </div>
                                      <div class="col-sm-6">
-                                         <div class="form-group">
-                                             <label for="exampleInputPassword1">Contact Person</label>
-                                             <input type="text" class="form-control" id="exampleInputPassword1"
-                                                 placeholder="Enter Contact Person" name="fullname">
-                                         </div>
-                                     </div>
-
-                                 </div>
-                                 <div class="row">
-                                     <div class="col-sm-6">
-                                         <div class="form-group">
-                                             <label for="exampleInputPassword1">Phone Number</label>
-                                             <input type="text" class="form-control" id="exampleInputPassword1"
-                                                 placeholder="Enter Phone Number" name='phone'>
-                                         </div>
-                                     </div>
-                                     <div class="col-sm-6">
-                                         <div class="form-group">
-                                             <label for="exampleInputEmail1">Email address</label>
-                                             <input type="email" class="form-control" id="exampleInputEmail1"
-                                                 placeholder="Enter email" name='email'>
-                                         </div>
-                                     </div>
-
-
-                                 </div>
-
-
-                                 <div class="row">
-
-                                     <div class="col-sm-6">
                                             <div class="form-group">
                                                     <label for="exampleInputPassword1"> State </label>
                                                     <select id="" class="form-control" name="state">
@@ -120,11 +89,6 @@
                                             </div>
                                      </div>
 
-                                     <div class="col-sm-6">
-                                         <label for="">Address</label><br>
-                                         <input type="text" class="form-control" id="exampleInputEmail1"
-                                             placeholder="Enter Address" name='address'>
-                                     </div>
 
                                  </div>
 
