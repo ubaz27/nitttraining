@@ -6,7 +6,11 @@
 
 	<testsuites>
 		<testsuite name="Tests">
+<<<<<<< HEAD
 			<directory suffix=".php">./tests</directory>
+=======
+			<directory suffix="Test.php">./tests</directory>
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 		</testsuite>
 	</testsuites>
 

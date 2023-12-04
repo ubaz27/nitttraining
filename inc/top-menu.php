@@ -1,10 +1,34 @@
+
+<?php
+// session_start();
+
+if (isset($_SESSION['user'])) 
+{
+  # code...
+  // echo $_SESSION['username'];
+}
+else
+{
+  header('Location:login.php');
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>NITT | Dashboard</title>
+
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/jquery/jquery.js"></script>
 <!-- Font Awesome -->
+
+<link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- daterange picker -->
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
@@ -62,6 +86,12 @@
   <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+<style>
+  .indicator{
+    color:red;
+  }
+</style>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -81,7 +111,7 @@
         <a href="dashboard.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Logout</a>
+        <a href="logout.php" class="nav-link">Logout</a>
       </li>
     </ul>
 

@@ -214,6 +214,13 @@ class Form
 				$js[] = ['K', $objattr['onKeystroke']];
 			}
 
+<<<<<<< HEAD
+=======
+			if (!empty($objattr['use_auto_fontsize']) && $objattr['use_auto_fontsize'] === true) {
+				$this->mpdf->FontSizePt = 0.0;
+			}
+
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 			$this->SetFormText($w, $h, $objattr['fieldname'], $val, $val, $objattr['title'], $flags, $fieldalign, false, (isset($objattr['maxlength']) ? $objattr['maxlength'] : false), $js, (isset($objattr['background-col']) ? $objattr['background-col'] : false), (isset($objattr['border-col']) ? $objattr['border-col'] : false));
 
 		} else {
@@ -319,6 +326,14 @@ class Form
 			if (!empty($objattr['onKeystroke'])) {
 				$js[] = ['K', $objattr['onKeystroke']];
 			}
+<<<<<<< HEAD
+=======
+
+			if (!empty($objattr['use_auto_fontsize']) && $objattr['use_auto_fontsize'] === true) {
+				$this->mpdf->FontSizePt = 0.0;
+			}
+
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 			$this->SetFormText($w, $h, $objattr['fieldname'], $texto, $texto, (isset($objattr['title']) ? $objattr['title'] : ''), $flags, $fieldalign, false, -1, $js, (isset($objattr['background-col']) ? $objattr['background-col'] : false), (isset($objattr['border-col']) ? $objattr['border-col'] : false));
 			$this->mpdf->SetTColor($this->colorConverter->convert(0, $this->mpdf->PDFAXwarnings));
 

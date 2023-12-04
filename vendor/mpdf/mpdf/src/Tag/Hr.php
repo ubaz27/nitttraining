@@ -2,6 +2,10 @@
 
 namespace Mpdf\Tag;
 
+<<<<<<< HEAD
+=======
+use Mpdf\Mpdf;
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 use Mpdf\Utils\NumericString;
 
 class Hr extends Tag
@@ -100,7 +104,11 @@ class Hr extends Tag
 
 		$objattr['type'] = 'hr';
 		$objattr['height'] = $objattr['linewidth'] + $objattr['margin_top'] + $objattr['margin_bottom'];
+<<<<<<< HEAD
 		$e = "\xbb\xa4\xactype=image,objattr=" . serialize($objattr) . "\xbb\xa4\xac";
+=======
+		$e = Mpdf::OBJECT_IDENTIFIER . "type=image,objattr=" . serialize($objattr) . Mpdf::OBJECT_IDENTIFIER;
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 
 		/* -- TABLES -- */
 		// Output it to buffers

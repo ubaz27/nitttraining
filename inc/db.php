@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 define('LIVE', false);
 
 DEFINE('DB_USER', 'root');
@@ -32,4 +32,5 @@ if (!$dbc) {
     // mysqli_set_charset($dbc, 'utf8');
 }
 
+// echo "sd";
 ?>

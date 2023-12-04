@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">NITT</span>
     </a>
 
     <!-- Sidebar -->
@@ -13,7 +13,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"><?php echo $_SESSION['Fullname'];?></a>
         </div>
       </div>
 
@@ -59,7 +59,7 @@
             </ul>
           </li>
           <li <?php  if ( $page=='director'){ echo 'class="nav-item menu-open "';} else{echo 'class="nav-item"'; }?> >
-            <a href="#" class="nav-link active bg-yellow">
+            <a href="#" class="nav-link active ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Student 
@@ -88,7 +88,7 @@
             </ul>
           </li>
           <li <?php  if ( $page=='coordinator'){ echo 'class="nav-item menu-open "';} else{echo 'class="nav-item"'; }?>>
-            <a href="#" class="nav-link active bg-green">
+            <a href="#" class="nav-link active ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                Reports
@@ -120,6 +120,12 @@
                   <p>ID Card Not Printed</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="./doc.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Documents</p>
+                </a>
+              </li>
              
             </ul>
           </li>
@@ -134,6 +140,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+<<<<<<< HEAD
                 <a href="./id_card_program.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>ID Card by Program </p>
@@ -141,10 +148,19 @@
               </li>
               <li class="nav-item">
                 <a href="./id_card_reg.php" class="nav-link">
+=======
+                <a href="./report_course_enrolment.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Course Enrolment</p>
+                </a>
+              </li>
+              <!-- <li class="nav-item">
+                <a href="./finance.php" class="nav-link">
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
                   <i class="far fa-circle nav-icon"></i>
                   <p>ID Card by Reg</p>
                 </a>
-              </li>
+              </li> -->
               
             </ul>
           </li>
@@ -152,74 +168,11 @@
         
          
       
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Forms
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>General Elements</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/forms/advanced.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Advanced Elements</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/forms/editors.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Editors</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/forms/validation.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Validation</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Tables
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+          
           <li class="nav-header">Features</li>
           
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="gallery.php" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Gallery

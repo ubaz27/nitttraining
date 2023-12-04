@@ -4,7 +4,11 @@
  * This file is part of FPDI
  *
  * @package   setasign\Fpdi
+<<<<<<< HEAD
  * @copyright Copyright (c) 2020 Setasign GmbH & Co. KG (https://www.setasign.com)
+=======
+ * @copyright Copyright (c) 2023 Setasign GmbH & Co. KG (https://www.setasign.com)
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
  * @license   http://opensource.org/licenses/mit-license The MIT License
  */
 
@@ -44,7 +48,13 @@ class Flate implements FilterInterface
                 // let's try if the checksum is CRC32
                 $fh = fopen('php://temp', 'w+b');
                 fwrite($fh, "\x1f\x8b\x08\x00\x00\x00\x00\x00" . $oData);
+<<<<<<< HEAD
                 stream_filter_append($fh, 'zlib.inflate', STREAM_FILTER_READ, ['window' => 30]);
+=======
+                // "window" == 31 -> 16 + (8 to 15): Uses the low 4 bits of the value as the window size logarithm.
+                //                   The input must include a gzip header and trailer (via 16).
+                stream_filter_append($fh, 'zlib.inflate', STREAM_FILTER_READ, ['window' => 31]);
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
                 fseek($fh, 0);
                 $data = @stream_get_contents($fh);
                 fclose($fh);

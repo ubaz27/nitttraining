@@ -4,12 +4,20 @@
  * This file is part of FPDI
  *
  * @package   setasign\Fpdi
+<<<<<<< HEAD
  * @copyright Copyright (c) 2020 Setasign GmbH & Co. KG (https://www.setasign.com)
+=======
+ * @copyright Copyright (c) 2023 Setasign GmbH & Co. KG (https://www.setasign.com)
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
  * @license   http://opensource.org/licenses/mit-license The MIT License
  */
 
 namespace setasign\Fpdi\PdfReader\DataStructure;
 
+<<<<<<< HEAD
+=======
+use setasign\Fpdi\Math\Vector;
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 use setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException;
 use setasign\Fpdi\PdfParser\PdfParser;
 use setasign\Fpdi\PdfParser\PdfParserException;
@@ -64,6 +72,14 @@ class Rectangle
         return new self($ax, $ay, $bx, $by);
     }
 
+<<<<<<< HEAD
+=======
+    public static function byVectors(Vector $ll, Vector $ur)
+    {
+        return new self($ll->getX(), $ll->getY(), $ur->getX(), $ur->getY());
+    }
+
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
     /**
      * Rectangle constructor.
      *

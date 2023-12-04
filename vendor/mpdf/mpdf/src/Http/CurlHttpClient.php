@@ -4,16 +4,29 @@ namespace Mpdf\Http;
 
 use Mpdf\Log\Context as LogContext;
 use Mpdf\Mpdf;
+<<<<<<< HEAD
+=======
+use Mpdf\PsrHttpMessageShim\Response;
+use Mpdf\PsrHttpMessageShim\Stream;
+use Mpdf\PsrLogAwareTrait\PsrLogAwareTrait;
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 use Psr\Http\Message\RequestInterface;
 use Psr\Log\LoggerInterface;
 
 class CurlHttpClient implements \Mpdf\Http\ClientInterface, \Psr\Log\LoggerAwareInterface
 {
+<<<<<<< HEAD
 
 	private $mpdf;
 
 	private $logger;
 
+=======
+	use PsrLogAwareTrait;
+
+	private $mpdf;
+
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 	public function __construct(Mpdf $mpdf, LoggerInterface $logger)
 	{
 		$this->mpdf = $mpdf;
@@ -116,9 +129,12 @@ class CurlHttpClient implements \Mpdf\Http\ClientInterface, \Psr\Log\LoggerAware
 			->withBody(Stream::create($data));
 	}
 
+<<<<<<< HEAD
 	public function setLogger(LoggerInterface $logger)
 	{
 		$this->logger = $logger;
 	}
 
+=======
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 }

@@ -2,6 +2,11 @@
 
 namespace Mpdf\Tag;
 
+<<<<<<< HEAD
+=======
+use Mpdf\Mpdf;
+
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 class A extends Tag
 {
 
@@ -19,7 +24,11 @@ class A extends Tag
 				} else {
 					$objattr['bklevel'] = 0;
 				}
+<<<<<<< HEAD
 				$e = "\xbb\xa4\xactype=bookmark,objattr=" . serialize($objattr) . "\xbb\xa4\xac";
+=======
+				$e = Mpdf::OBJECT_IDENTIFIER . "type=bookmark,objattr=" . serialize($objattr) . Mpdf::OBJECT_IDENTIFIER;
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 			}
 			/* -- END BOOKMARKS -- */
 			if ($this->mpdf->tableLevel) { // *TABLES*

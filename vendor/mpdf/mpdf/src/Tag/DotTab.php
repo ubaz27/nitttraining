@@ -2,6 +2,11 @@
 
 namespace Mpdf\Tag;
 
+<<<<<<< HEAD
+=======
+use Mpdf\Mpdf;
+
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 class DotTab extends Tag
 {
 
@@ -45,7 +50,11 @@ class DotTab extends Tag
 		$objattr['fontfamily'] = $this->mpdf->FontFamily;
 		$objattr['fontsize'] = $this->mpdf->FontSizePt;
 
+<<<<<<< HEAD
 		$e = "\xbb\xa4\xactype=dottab,objattr=" . serialize($objattr) . "\xbb\xa4\xac";
+=======
+		$e = Mpdf::OBJECT_IDENTIFIER . "type=dottab,objattr=" . serialize($objattr) . Mpdf::OBJECT_IDENTIFIER;
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 		/* -- TABLES -- */
 		// Output it to buffers
 		if ($this->mpdf->tableLevel) {

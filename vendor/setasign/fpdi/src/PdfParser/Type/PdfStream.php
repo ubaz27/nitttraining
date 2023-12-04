@@ -4,7 +4,11 @@
  * This file is part of FPDI
  *
  * @package   setasign\Fpdi
+<<<<<<< HEAD
  * @copyright Copyright (c) 2020 Setasign GmbH & Co. KG (https://www.setasign.com)
+=======
+ * @copyright Copyright (c) 2023 Setasign GmbH & Co. KG (https://www.setasign.com)
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
  * @license   http://opensource.org/licenses/mit-license The MIT License
  */
 
@@ -46,9 +50,14 @@ class PdfStream extends PdfType
 
         // Find the first "newline"
         while (($firstByte = $reader->getByte($offset)) !== false) {
+<<<<<<< HEAD
             if ($firstByte !== "\n" && $firstByte !== "\r") {
                 $offset++;
             } else {
+=======
+            $offset++;
+            if ($firstByte === "\n" || $firstByte === "\r") {
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
                 break;
             }
         }
@@ -60,11 +69,15 @@ class PdfStream extends PdfType
             );
         }
 
+<<<<<<< HEAD
         $sndByte = $reader->getByte($offset + 1);
         if ($firstByte === "\n" || $firstByte === "\r") {
             $offset++;
         }
 
+=======
+        $sndByte = $reader->getByte($offset);
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
         if ($sndByte === "\n" && $firstByte !== "\n") {
             $offset++;
         }

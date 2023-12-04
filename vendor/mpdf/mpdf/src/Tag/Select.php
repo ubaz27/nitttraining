@@ -132,7 +132,11 @@ class Select extends Tag
 		$objattr['height'] = ($this->mpdf->FontSize * $rows) + ($this->form->form_element_spacing['select']['outer']['v'] * 2)
 			+ ($this->form->form_element_spacing['select']['inner']['v'] * 2);
 
+<<<<<<< HEAD
 		$e = "\xbb\xa4\xactype=select,objattr=" . serialize($objattr) . "\xbb\xa4\xac";
+=======
+		$e = Mpdf::OBJECT_IDENTIFIER . "type=select,objattr=" . serialize($objattr) . Mpdf::OBJECT_IDENTIFIER;
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 
 		// Output it to buffers
 		if ($this->mpdf->tableLevel) { // *TABLES*

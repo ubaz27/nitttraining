@@ -13,12 +13,21 @@ use Mpdf\Language\ScriptToLanguageInterface;
 use Mpdf\Log\Context as LogContext;
 use Mpdf\Mpdf;
 use Mpdf\Otl;
+<<<<<<< HEAD
+=======
+use Mpdf\PsrLogAwareTrait\PsrLogAwareTrait;
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 use Mpdf\SizeConverter;
 use Psr\Log\LoggerInterface;
 
 class ImageProcessor implements \Psr\Log\LoggerAwareInterface
 {
 
+<<<<<<< HEAD
+=======
+	use PsrLogAwareTrait;
+
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 	/**
 	 * @var \Mpdf\Mpdf
 	 */
@@ -89,11 +98,14 @@ class ImageProcessor implements \Psr\Log\LoggerAwareInterface
 	 */
 	private $assetFetcher;
 
+<<<<<<< HEAD
 	/**
 	 * @var \Psr\Log\LoggerInterface
 	 */
 	public $logger;
 
+=======
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 	public function __construct(
 		Mpdf $mpdf,
 		Otl $otl,
@@ -126,6 +138,7 @@ class ImageProcessor implements \Psr\Log\LoggerAwareInterface
 		$this->failedImages = [];
 	}
 
+<<<<<<< HEAD
 	/**
 	 * @param \Psr\Log\LoggerInterface
 	 *
@@ -138,6 +151,8 @@ class ImageProcessor implements \Psr\Log\LoggerAwareInterface
 		return $this;
 	}
 
+=======
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 	public function getImage(&$file, $firstTime = true, $allowvector = true, $orig_srcpath = false, $interpolation = false)
 	{
 		// mPDF 6

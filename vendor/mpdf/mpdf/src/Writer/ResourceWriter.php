@@ -4,12 +4,20 @@ namespace Mpdf\Writer;
 
 use Mpdf\Strict;
 use Mpdf\Mpdf;
+<<<<<<< HEAD
+=======
+use Mpdf\PsrLogAwareTrait\PsrLogAwareTrait;
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 use Psr\Log\LoggerInterface;
 
 final class ResourceWriter implements \Psr\Log\LoggerAwareInterface
 {
 
 	use Strict;
+<<<<<<< HEAD
+=======
+	use PsrLogAwareTrait;
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 
 	/**
 	 * @var \Mpdf\Mpdf
@@ -66,11 +74,14 @@ final class ResourceWriter implements \Psr\Log\LoggerAwareInterface
 	 */
 	private $javaScriptWriter;
 
+<<<<<<< HEAD
 	/**
 	 * @var \Psr\Log\LoggerInterface
 	 */
 	private $logger;
 
+=======
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 	public function __construct(
 		Mpdf $mpdf,
 		BaseWriter $writer,
@@ -243,6 +254,7 @@ final class ResourceWriter implements \Psr\Log\LoggerAwareInterface
 			$this->writer->write('endobj');
 		}
 	}
+<<<<<<< HEAD
 
 	/**
 	 * @param \Psr\Log\LoggerInterface $logger
@@ -253,4 +265,6 @@ final class ResourceWriter implements \Psr\Log\LoggerAwareInterface
 	{
 		$this->logger = $logger;
 	}
+=======
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 }

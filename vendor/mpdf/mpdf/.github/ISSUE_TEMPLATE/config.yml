@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+blank_issues_enabled: false
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 contact_links:
     - name: General questions and troubleshooting ❓
       url: https://github.com/mpdf/mpdf/discussions

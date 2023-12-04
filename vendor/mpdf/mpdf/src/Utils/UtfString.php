@@ -36,6 +36,7 @@ class UtfString
 	{
 		// Returns the utf string corresponding to the unicode value
 		if ($num < 128) {
+<<<<<<< HEAD
 			if ($lo) {
 				return chr($num);
 			}
@@ -47,6 +48,21 @@ class UtfString
 		if ($num < 65536) {
 			return chr(($num >> 12) + 224) . chr((($num >> 6) & 63) + 128) . chr(($num & 63) + 128);
 		}
+=======
+			return $lo
+				? chr($num)
+				: '&#' . $num . ';';
+		}
+
+		if ($num < 2048) {
+			return chr(($num >> 6) + 192) . chr(($num & 63) + 128);
+		}
+
+		if ($num < 65536) {
+			return chr(($num >> 12) + 224) . chr((($num >> 6) & 63) + 128) . chr(($num & 63) + 128);
+		}
+
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 		if ($num < 2097152) {
 			return chr(($num >> 18) + 240) . chr((($num >> 12) & 63) + 128) . chr((($num >> 6) & 63) + 128) . chr(($num & 63) + 128);
 		}

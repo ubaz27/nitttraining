@@ -4,10 +4,19 @@ namespace Mpdf;
 
 use Psr\Log\LoggerInterface;
 use Mpdf\Log\Context as LogContext;
+<<<<<<< HEAD
+=======
+use Mpdf\PsrLogAwareTrait\PsrLogAwareTrait;
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 
 class SizeConverter implements \Psr\Log\LoggerAwareInterface
 {
 
+<<<<<<< HEAD
+=======
+	use PsrLogAwareTrait;
+
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 	private $dpi;
 
 	private $defaultFontSize;
@@ -17,11 +26,14 @@ class SizeConverter implements \Psr\Log\LoggerAwareInterface
 	 */
 	private $mpdf;
 
+<<<<<<< HEAD
 	/**
 	 * @var \Psr\Log\LoggerInterface
 	 */
 	private $logger;
 
+=======
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 	public function __construct($dpi, $defaultFontSize, Mpdf $mpdf, LoggerInterface $logger)
 	{
 		$this->dpi = $dpi;
@@ -30,11 +42,14 @@ class SizeConverter implements \Psr\Log\LoggerAwareInterface
 		$this->logger = $logger;
 	}
 
+<<<<<<< HEAD
 	public function setLogger(LoggerInterface $logger)
 	{
 		$this->logger = $logger;
 	}
 
+=======
+>>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 	/**
 	 * Depends of maxsize value to make % work properly. Usually maxsize == pagewidth
 	 * For text $maxsize = $fontsize
