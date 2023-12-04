@@ -62,21 +62,21 @@
             <a href="#" class="nav-link active bg-yellow">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Admin/Director/TA 
+                Student 
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./users.php" class="nav-link ">
+                <a href="./students_list.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Users</p>
+                  <p>Studnets List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./courses.php" class="nav-link">
+                <a href="./change_picture.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Courses</p>
+                  <p>Change Picture</Picture></p>
                 </a>
               </li>
               <li class="nav-item">
@@ -91,21 +91,33 @@
             <a href="#" class="nav-link active bg-green">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-               Coordinator
+               Reports
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./courses_his.php" class="nav-link ">
+                <a href="./generate_students_statistics.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Enrol Courses</p>
+                  <p>Student Statistics</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="./students.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Participants</p>
+                </a>
+              </li> -->
+              <li class="nav-item">
+                <a href="./generate_id_card_printed.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ID Card Printed </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./generate_id_card_not_printed.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ID Card Not Printed</p>
                 </a>
               </li>
              
@@ -116,21 +128,21 @@
             <a href="#" class="nav-link active bg-brown">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Report
+                Print ID Card
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./report.php" class="nav-link ">
+                <a href="./id_card_program.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Courses</p>
+                  <p>ID Card by Program </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./finance.php" class="nav-link">
+                <a href="./id_card_reg.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Finances</p>
+                  <p>ID Card by Reg</p>
                 </a>
               </li>
               
