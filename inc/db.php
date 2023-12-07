@@ -5,7 +5,7 @@ define('LIVE', false);
 DEFINE('DB_USER', 'root');
 DEFINE('DB_PASSWORD', '');
 DEFINE('DB_HOST', 'localhost');
-DEFINE('DB_NAME', 'ims');
+DEFINE('DB_NAME', 'nitttraining');
 
 // Make the connection:
 
