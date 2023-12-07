@@ -5,35 +5,21 @@ namespace Mpdf;
 use Mpdf\File\LocalContentLoaderInterface;
 use Mpdf\File\StreamWrapperChecker;
 use Mpdf\Http\ClientInterface;
-<<<<<<< HEAD
 use Mpdf\Http\Request;
 use Mpdf\Log\Context as LogContext;
-=======
-use Mpdf\Log\Context as LogContext;
-use Mpdf\PsrHttpMessageShim\Request;
-use Mpdf\PsrLogAwareTrait\PsrLogAwareTrait;
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 use Psr\Log\LoggerInterface;
 
 class AssetFetcher implements \Psr\Log\LoggerAwareInterface
 {
 
-<<<<<<< HEAD
-=======
-	use PsrLogAwareTrait;
-
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 	private $mpdf;
 
 	private $contentLoader;
 
 	private $http;
 
-<<<<<<< HEAD
 	private $logger;
 
-=======
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 	public function __construct(Mpdf $mpdf, LocalContentLoaderInterface $contentLoader, ClientInterface $http, LoggerInterface $logger)
 	{
 		$this->mpdf = $mpdf;
@@ -96,11 +82,7 @@ class AssetFetcher implements \Psr\Log\LoggerAwareInterface
 
 			$this->logger->debug(sprintf('Fetching remote content of file "%s"', $path), ['context' => LogContext::REMOTE_CONTENT]);
 
-<<<<<<< HEAD
 			/** @var \Mpdf\Http\Response $response */
-=======
-			/** @var \Mpdf\PsrHttpMessageShim\Response $response */
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 			$response = $this->http->sendRequest(new Request('GET', $path));
 
 			if ($response->getStatusCode() !== 200) {
@@ -120,11 +102,7 @@ class AssetFetcher implements \Psr\Log\LoggerAwareInterface
 		} catch (\InvalidArgumentException $e) {
 			$message = sprintf('Unable to fetch remote content "%s" because of an error "%s"', $path, $e->getMessage());
 			if ($this->mpdf->debug) {
-<<<<<<< HEAD
 				throw new \Mpdf\MpdfException($message, 0, $e);
-=======
-				throw new \Mpdf\MpdfException($message, 0, E_ERROR, null, null, $e);
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 			}
 
 			$this->logger->warning($message);
@@ -135,16 +113,12 @@ class AssetFetcher implements \Psr\Log\LoggerAwareInterface
 
 	public function isPathLocal($path)
 	{
-<<<<<<< HEAD
 		return strpos($path, '://') === false; // @todo More robust implementation
 	}
 
 	public function setLogger(LoggerInterface $logger)
 	{
 		$this->logger = $logger;
-=======
-		return str_starts_with($path, 'file://') || strpos($path, '://') === false; // @todo More robust implementation
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 	}
 
 }

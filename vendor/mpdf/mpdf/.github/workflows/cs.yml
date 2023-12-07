@@ -26,11 +26,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-<<<<<<< HEAD
         uses: "actions/checkout@v2"
-=======
-        uses: "actions/checkout@v3"
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 
       - name: "Install PHP"
         uses: "shivammathur/setup-php@v2"

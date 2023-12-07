@@ -122,7 +122,7 @@ if (isset($_POST['submit'])) {
             if (move_uploaded_file(@$_FILES["passport"]["tmp_name"], $target_file)) {
 
                 $s = "INSERT INTO `tblstudent`( `reg_number`, `first_name`, `others` ,`student_phone`, `department`, `faculty`, `nok_phone`, `gender`, `blood_group`, `session`, `course_of_study`, `program_type`, `image_path`, `exp_date`) VALUES 
-                ('$reg_Num','$fname','$others','$p_num','$department','$faculty','$nok_phone','$gender','$blood_group','$session','$course_of_study','$programme_Type','$image_path','$exp_date')";
+                ('$reg_Num','$fname','$others','$p_num','$department','$faculty','$nok_phone','$gender','$blood_group','$session','$course_of_study','$programme_Type','$image_name','$exp_date')";
                 if (mysqli_query($dbc, $s)) {
                     $message .= 'Record Added Successfully.<br>';
                      $alert = 'alert alert-info alert-dismissible';

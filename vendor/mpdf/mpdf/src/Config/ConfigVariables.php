@@ -515,11 +515,7 @@ class ConfigVariables
 			'curlExecutionTimeout' => null,
 			'curlProxy' => null,
 			'curlProxyAuth' => null,
-<<<<<<< HEAD
 			'curlUserAgent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:13.0) Gecko/20100101 Firefox/13.0.1',
-=======
-			'curlUserAgent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:108.0) Gecko/20100101 Firefox/108.0',
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 
 			'exposeVersion' => true,
 		];

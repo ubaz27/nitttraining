@@ -407,11 +407,7 @@ class Img extends Tag
 				$objattr['transform'] = $properties['TRANSFORM'];
 			}
 
-<<<<<<< HEAD
 			$e = "\xbb\xa4\xactype=image,objattr=" . serialize($objattr) . "\xbb\xa4\xac";
-=======
-			$e = Mpdf::OBJECT_IDENTIFIER . "type=image,objattr=" . serialize($objattr) . Mpdf::OBJECT_IDENTIFIER;
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 
 			/* -- TABLES -- */
 			// Output it to buffers
@@ -444,11 +440,7 @@ class Img extends Tag
 				$objattr['SUBJECT'] = '';
 				$objattr['OPACITY'] = $this->mpdf->annotOpacity;
 				$objattr['COLOR'] = $this->colorConverter->convert('yellow', $this->mpdf->PDFAXwarnings);
-<<<<<<< HEAD
 				$e = "\xbb\xa4\xactype=annot,objattr=" . serialize($objattr) . "\xbb\xa4\xac";
-=======
-				$e = Mpdf::OBJECT_IDENTIFIER . "type=annot,objattr=" . serialize($objattr) . Mpdf::OBJECT_IDENTIFIER;
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 				if ($this->mpdf->tableLevel) { // *TABLES*
 					$this->mpdf->cell[$this->mpdf->row][$this->mpdf->col]['textbuffer'][] = [$e]; // *TABLES*
 				} // *TABLES*

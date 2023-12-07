@@ -2,11 +2,6 @@
 
 namespace Mpdf\Tag;
 
-<<<<<<< HEAD
-=======
-use Mpdf\Mpdf;
-
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 class Annotation extends Tag
 {
 
@@ -89,11 +84,7 @@ class Annotation extends Tag
 				$objattr['POPUP'] = true;
 			}
 		}
-<<<<<<< HEAD
 		$e = "\xbb\xa4\xactype=annot,objattr=" . serialize($objattr) . "\xbb\xa4\xac";
-=======
-		$e = Mpdf::OBJECT_IDENTIFIER . "type=annot,objattr=" . serialize($objattr) . Mpdf::OBJECT_IDENTIFIER;
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 		if ($this->mpdf->tableLevel) {
 			$this->mpdf->cell[$this->mpdf->row][$this->mpdf->col]['textbuffer'][] = [$e];
 		} // *TABLES*

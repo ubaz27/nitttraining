@@ -712,11 +712,7 @@ class Table extends Tag
 			$objattr['row'] = $this->mpdf->row;
 			$objattr['col'] = $this->mpdf->col;
 			$objattr['level'] = $this->mpdf->tableLevel;
-<<<<<<< HEAD
 			$e = "\xbb\xa4\xactype=nestedtable,objattr=" . serialize($objattr) . "\xbb\xa4\xac";
-=======
-			$e = Mpdf::OBJECT_IDENTIFIER . "type=nestedtable,objattr=" . serialize($objattr) . Mpdf::OBJECT_IDENTIFIER;
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 			$this->mpdf->_saveCellTextBuffer($e);
 			$this->mpdf->cell[$this->mpdf->row][$this->mpdf->col]['s'] += $tl;
 			if (!isset($this->mpdf->cell[$this->mpdf->row][$this->mpdf->col]['maxs'])) {

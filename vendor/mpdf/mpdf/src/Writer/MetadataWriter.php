@@ -6,10 +6,6 @@ use Mpdf\Strict;
 use Mpdf\Form;
 use Mpdf\Mpdf;
 use Mpdf\Pdf\Protection;
-<<<<<<< HEAD
-=======
-use Mpdf\PsrLogAwareTrait\PsrLogAwareTrait;
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 use Mpdf\Utils\PdfDate;
 
 use Psr\Log\LoggerInterface;
@@ -18,10 +14,6 @@ class MetadataWriter implements \Psr\Log\LoggerAwareInterface
 {
 
 	use Strict;
-<<<<<<< HEAD
-=======
-	use PsrLogAwareTrait;
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 
 	/**
 	 * @var \Mpdf\Mpdf
@@ -43,14 +35,11 @@ class MetadataWriter implements \Psr\Log\LoggerAwareInterface
 	 */
 	private $protection;
 
-<<<<<<< HEAD
 	/**
 	 * @var \Psr\Log\LoggerInterface
 	 */
 	private $logger;
 
-=======
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 	public function __construct(Mpdf $mpdf, BaseWriter $writer, Form $form, Protection $protection, LoggerInterface $logger)
 	{
 		$this->mpdf = $mpdf;
@@ -819,14 +808,11 @@ class MetadataWriter implements \Psr\Log\LoggerAwareInterface
 		}
 	}
 
-<<<<<<< HEAD
 	public function setLogger(LoggerInterface $logger)
 	{
 		$this->logger = $logger;
 	}
 
-=======
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 	private function getVersionString()
 	{
 		$return = Mpdf::VERSION;

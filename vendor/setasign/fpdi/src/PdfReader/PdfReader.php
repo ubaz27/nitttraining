@@ -4,11 +4,7 @@
  * This file is part of FPDI
  *
  * @package   setasign\Fpdi
-<<<<<<< HEAD
  * @copyright Copyright (c) 2020 Setasign GmbH & Co. KG (https://www.setasign.com)
-=======
- * @copyright Copyright (c) 2023 Setasign GmbH & Co. KG (https://www.setasign.com)
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
  * @license   http://opensource.org/licenses/mit-license The MIT License
  */
 
@@ -206,12 +202,7 @@ class PdfReader
             return;
         }
 
-<<<<<<< HEAD
         $readPages = function ($kids, $count) use (&$readPages, $readAll) {
-=======
-        $expectedPageCount = $this->getPageCount();
-        $readPages = function ($kids, $count) use (&$readPages, $readAll, $expectedPageCount) {
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
             $kids = PdfArray::ensure($kids);
             $isLeaf = ($count->value === \count($kids->value));
 
@@ -231,14 +222,6 @@ class PdfReader
                 } else {
                     $this->pages[] = $object;
                 }
-<<<<<<< HEAD
-=======
-
-                // stop if all pages are read - faulty documents exists with additional entries with invalid data.
-                if (count($this->pages) === $expectedPageCount) {
-                    break;
-                }
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
             }
         };
 

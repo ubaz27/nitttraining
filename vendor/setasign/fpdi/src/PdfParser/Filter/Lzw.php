@@ -4,11 +4,7 @@
  * This file is part of FPDI
  *
  * @package   setasign\Fpdi
-<<<<<<< HEAD
  * @copyright Copyright (c) 2020 Setasign GmbH & Co. KG (https://www.setasign.com)
-=======
- * @copyright Copyright (c) 2023 Setasign GmbH & Co. KG (https://www.setasign.com)
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
  * @license   http://opensource.org/licenses/mit-license The MIT License
  */
 
@@ -91,18 +87,13 @@ class Lzw implements FilterInterface
         $this->nextData = 0;
         $this->nextBits = 0;
 
-<<<<<<< HEAD
         $oldCode = 0;
-=======
-        $prevCode = 0;
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 
         $uncompData = '';
 
         while (($code = $this->getNextCode()) !== 257) {
             if ($code === 256) {
                 $this->initsTable();
-<<<<<<< HEAD
                 $code = $this->getNextCode();
 
                 if ($code === 257) {
@@ -127,23 +118,6 @@ class Lzw implements FilterInterface
                     $oldCode = $code;
                 }
             }
-=======
-            } elseif ($prevCode === 256) {
-                $uncompData .= $this->sTable[$code];
-            } elseif ($code < $this->tIdx) {
-                $string = $this->sTable[$code];
-                $uncompData .= $string;
-
-                $this->addStringToTable($this->sTable[$prevCode], $string[0]);
-            } else {
-                $string = $this->sTable[$prevCode];
-                $string .= $string[0];
-                $uncompData .= $string;
-
-                $this->addStringToTable($string);
-            }
-            $prevCode = $code;
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
         }
 
         return $uncompData;
@@ -189,11 +163,7 @@ class Lzw implements FilterInterface
     /**
      * Returns the next 9, 10, 11 or 12 bits.
      *
-<<<<<<< HEAD
      * @return integer
-=======
-     * @return int
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
      */
     protected function getNextCode()
     {

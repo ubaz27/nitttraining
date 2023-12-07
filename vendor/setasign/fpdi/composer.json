@@ -40,11 +40,7 @@
         "phpunit/phpunit": "~5.7",
         "setasign/fpdf": "~1.8",
         "tecnickcom/tcpdf": "~6.2",
-<<<<<<< HEAD
         "setasign/tfpdf": "1.31",
-=======
-        "setasign/tfpdf": "~1.31",
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
         "squizlabs/php_codesniffer": "^3.5"
     },
     "autoload-dev": {

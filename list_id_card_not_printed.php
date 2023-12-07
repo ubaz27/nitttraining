@@ -1,5 +1,5 @@
 <?php
- session_start();   
+ //session_start();   
  include ("inc/db.php");
  $page="coordinator";
   include 'inc/top-menu.php';

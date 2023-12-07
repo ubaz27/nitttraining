@@ -4,11 +4,7 @@
  * This file is part of FPDI
  *
  * @package   setasign\Fpdi
-<<<<<<< HEAD
  * @copyright Copyright (c) 2020 Setasign GmbH & Co. KG (https://www.setasign.com)
-=======
- * @copyright Copyright (c) 2023 Setasign GmbH & Co. KG (https://www.setasign.com)
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
  * @license   http://opensource.org/licenses/mit-license The MIT License
  */
 
@@ -17,11 +13,7 @@ namespace setasign\Fpdi;
 /**
  * Trait FpdfTplTrait
  *
-<<<<<<< HEAD
  * This class adds a templating feature to tFPDF.
-=======
- * This trait adds a templating feature to FPDF and tFPDF.
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
  */
 trait FpdfTplTrait
 {
@@ -242,13 +234,7 @@ trait FpdfTplTrait
                 'lMargin' => $this->lMargin,
                 'rMargin' => $this->rMargin,
                 'h' => $this->h,
-<<<<<<< HEAD
                 'w' => $this->w,
-=======
-                'hPt' => $this->hPt,
-                'w' => $this->w,
-                'wPt' => $this->wPt,
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
                 'FontFamily' => $this->FontFamily,
                 'FontStyle' => $this->FontStyle,
                 'FontSizePt' => $this->FontSizePt,
@@ -265,13 +251,7 @@ trait FpdfTplTrait
         $this->currentTemplateId = $templateId;
 
         $this->h = $height;
-<<<<<<< HEAD
         $this->w = $width;
-=======
-        $this->hPt = $height / $this->k;
-        $this->w = $width;
-        $this->wPt = $width / $this->k;
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 
         $this->SetXY($this->lMargin, $this->tMargin);
         $this->SetRightMargin($this->w - $width + $this->rMargin);
@@ -299,13 +279,7 @@ trait FpdfTplTrait
         $this->lMargin = $state['lMargin'];
         $this->rMargin = $state['rMargin'];
         $this->h = $state['h'];
-<<<<<<< HEAD
         $this->w = $state['w'];
-=======
-        $this->hPt = $state['hPt'];
-        $this->w = $state['w'];
-        $this->wPt = $state['wPt'];
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
         $this->SetAutoPageBreak($state['AutoPageBreak'], $state['bMargin']);
 
         $this->FontFamily = $state['FontFamily'];
@@ -432,12 +406,9 @@ trait FpdfTplTrait
         }
     }
 
-<<<<<<< HEAD
     /**
      * @inheritdoc
      */
-=======
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
     protected function _putimages()
     {
         parent::_putimages();

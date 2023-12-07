@@ -7,10 +7,6 @@ use DateInterval;
 use DateTimeInterface;
 use DateTimeZone;
 use DeepCopy\Exception\CloneException;
-<<<<<<< HEAD
-=======
-use DeepCopy\Filter\ChainableFilter;
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 use DeepCopy\Filter\Filter;
 use DeepCopy\Matcher\Matcher;
 use DeepCopy\Reflection\ReflectionHelper;
@@ -243,13 +239,6 @@ class DeepCopy
                     }
                 );
 
-<<<<<<< HEAD
-=======
-                if ($filter instanceof ChainableFilter) {
-                    continue;
-                }
-
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
                 // If a filter matches, we stop processing this property
                 return;
             }

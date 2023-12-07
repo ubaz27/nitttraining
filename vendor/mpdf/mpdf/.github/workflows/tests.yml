@@ -30,19 +30,11 @@ jobs:
           - "7.4"
           - "8.0"
           - "8.1"
-<<<<<<< HEAD
-=======
-          - "8.2"
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
         operating-system: [ubuntu-latest, windows-latest]
 
     steps:
       - name: "Checkout"
-<<<<<<< HEAD
         uses: "actions/checkout@v2"
-=======
-        uses: "actions/checkout@v3"
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
 
       - name: "Install PHP"
         uses: "shivammathur/setup-php@v2"
@@ -57,8 +49,4 @@ jobs:
         run: "composer install --no-interaction --no-progress"
 
       - name: "Tests"
-<<<<<<< HEAD
         run: composer test
-=======
-        run: composer test
->>>>>>> c3d04cc92fe67578ab00ea1ef48a41df536778b9
