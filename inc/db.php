@@ -1,11 +1,11 @@
 <?php
-
+session_start();
 define('LIVE', false);
 
 DEFINE('DB_USER', 'root');
 DEFINE('DB_PASSWORD', '');
 DEFINE('DB_HOST', 'localhost');
-DEFINE('DB_NAME', 'nitttraining');
+DEFINE('DB_NAME', 'ims');
 
 // Make the connection:
 
@@ -18,18 +18,19 @@ if (!$dbc) {
 } else {
     // Otherwise, set the encoding:
 // echo "co";
-    $q = 'select * from tblschoolinfo';
-    $r = mysqli_query($dbc, $q);
-    if (mysqli_num_rows($r) == 1) {
-        $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
-        define('NAME', $row['name']);
-        define('ADDRESS', $row['address']);
-        define('PHONE', $row['phone']);
-        define('STATE', $row['state']);
-        define('EMAIL', $row['email']);
-    }
+    // $q = 'select * from tblschoolinfo';
+    // $r = mysqli_query($dbc, $q);
+    // if (mysqli_num_rows($r) == 1) {
+    //     $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
+    //     define('NAME', $row['name']);
+    //     define('ADDRESS', $row['address']);
+    //     define('PHONE', $row['phone']);
+    //     define('STATE', $row['state']);
+    //     define('EMAIL', $row['email']);
+    // }
 
-    mysqli_set_charset($dbc, 'utf8');
+    // mysqli_set_charset($dbc, 'utf8');
 }
 
+// echo "sd";
 ?>

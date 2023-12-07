@@ -53,10 +53,7 @@
                                          <th>S/N</th>
                                          <th>Agency Name</th>
                                          <th>State</th>
-                                         <th>Contact Name</th>
-                                         <th>Phone</th>
-                                         <th>Email</th>
-
+                                        
                                      </tr>
                                  </thead>
                                  <tbody>
@@ -74,18 +71,7 @@
                                                  '</td>
                                                                                           <td>' .
                                                  $row['state'] .
-                                                 '</td>
-                                                                                          <td>' .
-                                                 $row['contact_person'] .
-                                                 '</td>';
-                                             // $role = $row['status']==1 ? "Checked" : "";
-                                             echo '<td>' .
-                                                 $row['phone'] .
-                                                 '</td>
-                                                                                          <td>' .
-                                                 $row['email'] .
-                                                 '</td>
-                                                                                      </tr>';
+                                                 '</td></tr>';
                                                                                       $sn+=1;
                                          }
                                      }
@@ -99,9 +85,7 @@
                                          <th>S/N</th>
                                          <th>Agency Name</th>
                                          <th>State</th>
-                                         <th>Contact Name</th>
-                                         <th>Phone</th>
-                                         <th>Email</th>
+                                        
                                      </tr>
                                  </tfoot>
                              </table>

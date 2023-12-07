@@ -1,6 +1,8 @@
- <?php include 'inc/top-menu.php';
+ <?php  include 'inc/db.php';
+  include 'inc/top-menu.php';
  $page="dashboard";
   include 'inc/aside.php';
+
   ?>
 
   <!-- Content Wrapper. Contains page content -->

@@ -2,29 +2,29 @@
  
  include 'inc/db.php';
  include 'inc/top-menu.php';
- $page = 'agencies';
+ $page="director";
  include 'inc/aside.php';
  
  if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
-     $agency_name = $_POST['agency_name'];
-     $phone = $_POST['phone'];
-     $email = $_POST['email'];
-     $address = $_POST['address'];
-     $state = $_POST['state'];
-     $fullname = $_POST['fullname'];
+    //  $agency_name = $_POST['agency_name'];
+    //  $phone = $_POST['phone'];
+    //  $email = $_POST['email'];
+    //  $address = $_POST['address'];
+    //  $state = $_POST['state'];
+    //  $fullname = $_POST['fullname'];
  
-     if (!empty($agency_name) and !empty($state) and !empty($fullname)) {
-         $sql = "INSERT INTO `tblagencies`(`name`, `state`, `contact_person`, `phone`, `email`, `address`) VALUES
-          ('$agency_name','$state','$fullname','$phone','$email', '$address')";
-         $result = mysqli_query($dbc, $sql);
-         if (mysqli_affected_rows($dbc) == 1) {
-             $message = 'Record Added Successfully';
-             $alert = 'alert alert-info alert-dismissible';
-         } else {
-             $message = 'Something went wrong, try again';
-             $alert = 'alert alert-danger alert-dismissible';
-         }
-     }
+    //  if (!empty($agency_name) and !empty($state) and !empty($fullname)) {
+    //      $sql = "INSERT INTO `tblagencies`(`name`, `state`, `contact_person`, `phone`, `email`, `address`) VALUES
+    //       ('$agency_name','$state','$fullname','$phone','$email', '$address')";
+    //      $result = mysqli_query($dbc, $sql);
+    //      if (mysqli_affected_rows($dbc) == 1) {
+    //          $message = 'Record Added Successfully';
+    //          $alert = 'alert alert-info alert-dismissible';
+    //      } else {
+    //          $message = 'Something went wrong, try again';
+    //          $alert = 'alert alert-danger alert-dismissible';
+    //      }
+    //  }
  }
  
  ?>
@@ -53,71 +53,26 @@
              <!-- Main row -->
              <div class="row">
                  <div class="col-sm-12">
-                 <?php
-                     
-                     if (!empty($message)) {
-                         echo '<div style="width:100%; margin-left:0%">
-                                                                  <div class="' .
-                             $alert .
-                             '">
-                                                                      <button type="button" class="close" data-dismiss="alert"
-                                                                          aria-hidden="true">&times;</button>
-                                                                      <h5><i class="icon fas fa-info"></i> Alert!</h5>
-                                                                      ' .
-                             $message .
-                             '
-                                                                  </div>
-                                                              </div>';
-                     }
-                     
-                     ?>
+                 <div id= "user_note">
+
+                </div>
+                 <!--  -->
                      <div class="card card-primary">
                          <div class="card-header">
                              <h3 class="card-title">Add Agency Form</h3>
                          </div>
                          <!-- /.card-header -->
                          <!-- form start -->
-                         <form method="POST" action="add_agency.php" name="add_agency">
+                         <form method="POST" action="add_agency.php" name="add_agency" id="add_agency">
                              <div class="card-body">
                                  <div class="row">
                                      <div class="col-sm-6">
                                          <div class="form-group">
-                                             <label for="exampleInputFullName">Agency Name</label>
+                                             <label for="exampleInputFullName">Agency Name</label> <span class="indicator">*</span>
                                              <input type="text" class="form-control" id="exampleInputEmail1"
                                                  placeholder="Enter Agency Name" name='agency_name'>
                                          </div>
                                      </div>
-                                     <div class="col-sm-6">
-                                         <div class="form-group">
-                                             <label for="exampleInputPassword1">Contact Person</label>
-                                             <input type="text" class="form-control" id="exampleInputPassword1"
-                                                 placeholder="Enter Contact Person" name="fullname">
-                                         </div>
-                                     </div>
-
-                                 </div>
-                                 <div class="row">
-                                     <div class="col-sm-6">
-                                         <div class="form-group">
-                                             <label for="exampleInputPassword1">Phone Number</label>
-                                             <input type="text" class="form-control" id="exampleInputPassword1"
-                                                 placeholder="Enter Phone Number" name='phone'>
-                                         </div>
-                                     </div>
-                                     <div class="col-sm-6">
-                                         <div class="form-group">
-                                             <label for="exampleInputEmail1">Email address</label>
-                                             <input type="email" class="form-control" id="exampleInputEmail1"
-                                                 placeholder="Enter email" name='email'>
-                                         </div>
-                                     </div>
-
-
-                                 </div>
-
-
-                                 <div class="row">
-
                                      <div class="col-sm-6">
                                             <div class="form-group">
                                                     <label for="exampleInputPassword1"> State </label>
@@ -134,11 +89,6 @@
                                             </div>
                                      </div>
 
-                                     <div class="col-sm-6">
-                                         <label for="">Address</label><br>
-                                         <input type="text" class="form-control" id="exampleInputEmail1"
-                                             placeholder="Enter Address" name='address'>
-                                     </div>
 
                                  </div>
 
@@ -148,7 +98,7 @@
                      <!-- /.card-body -->
 
                      <div class="card-footer">
-                         <button type="submit" class="btn btn-primary">Submit</button>
+                         <button type="submit" id="user_submit" class="btn btn-primary">Submit</button>
                      </div>
                      </form>
                  </div>
@@ -160,4 +110,45 @@
  <!-- /.content -->
  </div>
  <!-- /.content-wrapper -->
+
+ <script type="text/javascript" src="./dist/js/jquery.min.js"></script>
+
+<script type="text/javascript">
+     $(document).ready(function() {
+
+   
+
+
+    // save to database
+     //users form
+        var user_form = $('#add_agency'); //user's form name = $()
+         var user_submit = $('#user_submit');  // user submit button
+         var user_note = $('#user_note');
+
+          user_submit.on('click', function(e) {
+            e.preventDefault(); // prevent default form submit
+            $.ajax({
+                url: 'process\\process_agency.php', // form action url
+                type: 'POST', // form submit method get/post
+                //dataType: 'html', // request type html/json/xml
+                data: user_form.serialize(), // serialize form data
+                beforeSend: function() {
+                    //alert.fadeOut();
+                    user_submit.html('Sending....'); // change submit button text
+                },
+                success: function(data) {
+                    user_note.html(data).fadeIn(); //fade in response data
+                    // user_submit.hide();
+                    user_submit.html('Submit');
+                },
+                error: function(e) {
+                    console.log(e)
+                }
+            });
+        });
+
+     });
+
+
+</script>
  <?php include 'inc/footer.php'; ?>

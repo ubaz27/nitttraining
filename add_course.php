@@ -2,7 +2,7 @@
 include 'inc/db.php';
 include 'inc/top-menu.php';
 
-$page = 'course';
+$page="director";
 include 'inc/aside.php';
 
 
@@ -63,28 +63,9 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="row">
                 <div class="col-sm-12">
                        <!-- message -->
-                <?php
-                    //  echo $status;
-                    //  echo $course_name;
-                    //  echo $duration;
-                    //  echo $category;
-                    //  echo $fees;
-                     if (!empty($message)) {
-                         echo '<div style="width:100%; margin-left:0%">
-                                                                  <div class="' .
-                             $alert .
-                             '">
-                                                                      <button type="button" class="close" data-dismiss="alert"
-                                                                          aria-hidden="true">&times;</button>
-                                                                      <h5><i class="icon fas fa-info"></i> Alert!</h5>
-                                                                      ' .
-                             $message .
-                             '
-                                                                  </div>
-                                                              </div>';
-                     }
-                     
-                     ?>
+                       <div id= "user_note">
+
+</div>
                         <!-- end of message -->
                     <div class="card card-primary">
                         <div class="card-header">
@@ -92,7 +73,7 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form method="POST" action="add_course.php" name="add_course">
+                        <form method="POST" action="add_course.php" name="add_course" id="add_course">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-6">
@@ -132,9 +113,8 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="exampleInputPassword1"> Category </label>
-                                            <select name="category" id="" class="form-control" >
-                                                <option value="">Scheduled</option>
-                                                <option value="">Customised</option>
+                                            <select name="category" id="category" class="form-control" >
+                                               
                                                </select>
 
                                         </div>
@@ -167,7 +147,7 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" id="user_submit" class="btn btn-primary">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -179,4 +159,45 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+<script type="text/javascript" src="./dist/js/jquery.min.js"></script>
+
+<script type="text/javascript">
+     $(document).ready(function() {
+
+//add category
+$("#category").load("getters\\getCategory.php");
+
+
+    // save to database
+     //users form
+        var user_form = $('#add_course'); //user's form name = $()
+         var user_submit = $('#user_submit');  // user submit button
+         var user_note = $('#user_note');
+
+          user_submit.on('click', function(e) {
+            e.preventDefault(); // prevent default form submit
+            $.ajax({
+                url: 'process\\process_course.php', // form action url
+                type: 'POST', // form submit method get/post
+                //dataType: 'html', // request type html/json/xml
+                data: user_form.serialize(), // serialize form data
+                beforeSend: function() {
+                    //alert.fadeOut();
+                    user_submit.html('Sending....'); // change submit button text
+                },
+                success: function(data) {
+                    user_note.html(data).fadeIn(); //fade in response data
+                    // user_submit.hide();
+                    user_submit.html('Submit');
+                },
+                error: function(e) {
+                    console.log(e)
+                }
+            });
+        });
+
+     });
+
+
+</script>
 <?php include 'inc/footer.php'; ?>

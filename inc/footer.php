@@ -15,7 +15,8 @@
 <!-- ./wrapper -->
 
 
-
+<script src="plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+<script src="plugins/filterizr/jquery.filterizr.min.js"></script>
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
