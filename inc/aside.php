@@ -62,12 +62,17 @@
               <a href="#" class="nav-link active bg-yellow">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
+<<<<<<< HEAD
                   Admin/Director/TA 
+=======
+                  Student 
+>>>>>>> e7787be2a2fc5fe3b9f21b5de5308d845925de61
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
+<<<<<<< HEAD
                   <a href="./users.php" class="nav-link ">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Users</p>
@@ -77,6 +82,17 @@
                   <a href="./courses.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Courses</p>
+=======
+                  <a href="./students_list.php" class="nav-link ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Studets List</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./change_picture.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Change of Picture</p>
+>>>>>>> e7787be2a2fc5fe3b9f21b5de5308d845925de61
                   </a>
                 </li>
                 <li class="nav-item">
@@ -91,12 +107,17 @@
               <a href="#" class="nav-link active bg-green">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
+<<<<<<< HEAD
                  Coordinator
+=======
+                 Reports
+>>>>>>> e7787be2a2fc5fe3b9f21b5de5308d845925de61
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
+<<<<<<< HEAD
                   <a href="./courses_his.php" class="nav-link ">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Enrol Courses</p>
@@ -106,6 +127,24 @@
                   <a href="./students.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Participants</p>
+=======
+                  <a href="./generate_students_statistics.php" class="nav-link ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Students Statistics</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./generate_id_card_printed.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>ID Card Printed</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="./generate_id_card_not_printed.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>ID Card not Printed</p>
+>>>>>>> e7787be2a2fc5fe3b9f21b5de5308d845925de61
                   </a>
                 </li>
                
@@ -116,12 +155,17 @@
               <a href="#" class="nav-link active bg-brown">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
+<<<<<<< HEAD
                   Report
+=======
+                  Print
+>>>>>>> e7787be2a2fc5fe3b9f21b5de5308d845925de61
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
+<<<<<<< HEAD
                   <a href="./report.php" class="nav-link ">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Courses</p>
@@ -131,6 +175,17 @@
                   <a href="./finance.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Finances</p>
+=======
+                  <a href="./id_card_program.php" class="nav-link ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Print by Program</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./id_card_reg.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Print by Reg.</p>
+>>>>>>> e7787be2a2fc5fe3b9f21b5de5308d845925de61
                   </a>
                 </li>
                 
